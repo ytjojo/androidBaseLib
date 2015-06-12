@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="rippelColor">#f44336</color>
+    <color name="search_view_hint_color">#e3f2fd</color>
+    <color name="color_shadow">#44000000</color>
+    <color name="state_menu_item_selected">#44009688</color>
+    <color name="color_primary"> #00BCD4</color>
+    <color name="color_primary_light">#B2EBF2</color>
+    <color name="color_accent">#03A9F4</color>
+    <color name="color_primary_dark">#0097A7</color>
+    <color name="textColorPrimary_white">#FFFFFF</color>
+    <color name="textColorPrimary_black">#212121</color>
+    <color name="textColorPrimary_black_disable">#42212121</color>
+    <color name="textColorPrimary_black_secondary">#212121</color>
+    <color name="divider_color_grey">#B6B6B6</color>
+    <color name="divider_red">#FF4B4B</color>
+
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="#99999a" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:layout_height="wrap_content"
+            android:text="客人姓名" />
+
+        <EditText
+            android:id="@+id/edit_customerName"
+            style="@style/EtItemInput"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+         android:id="@+id/layout_selectDate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:text="拍摄时间" />
+
+        <TextView
+             android:id="@+id/tv_shootingDate"
+            style="@style/TvItemContent"
+            android:text="点击选择" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:text="联系电话" />
+
+        <EditText
+             android:id="@+id/edit_phone"
+            style="@style/EtItemInput"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:ems="11" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:text="微信号    " />
+
+        <EditText
+             android:id="@+id/edit_mmId"
+            style="@style/EtItemInput"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:ems="20" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:text="预订套餐" />
+
+        <EditText
+             android:id="@+id/edit_orderPackege"
+            style="@style/EtItemInput"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+             >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+         android:id="@+id/layout_selectRemind"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:text="设置提醒" />
+
+        <TextView
+             android:id="@+id/id_remindType"
+            style="@style/TvItemContent"
+            android:text="提醒选择" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:layout_gravity="top|left"
+            android:layout_marginTop="15dp"
+            android:text="其他备注" />
+
+        <EditText
+             android:id="@+id/edit_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="5dp"
+            android:gravity="top|left"
+            android:maxLines="5"
+            android:text="时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个时间哦烧地卧萨多瓦个"
+            android:maxLength="200"
+            android:hint="输入备注" />
+    </LinearLayout>
+
+</LinearLayout>

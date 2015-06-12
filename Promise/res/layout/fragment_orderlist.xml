@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kerkr.edu.adapterView.XExpandListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listView"
+    style="@style/ListViewStyle"
+    android:groupIndicator="@null" >
+
+</com.kerkr.edu.adapterView.XExpandListView>

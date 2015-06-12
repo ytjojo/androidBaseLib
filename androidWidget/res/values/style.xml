@@ -1,0 +1,90 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseCompatTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="actionMenuTextAppearance">@style/CustomTabTextStyle</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseCompatTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="CustomTabTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <!-- <item name="android:textStyle">italic|bold</item> -->
+
+    </style>
+
+    <!-- 溢出菜单样式 -->
+    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:dropDownHorizontalOffset">-4dip</item>
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+        <item name="android:dropDownVerticalOffset">4dip</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Dialog_Translucent_NoTitle" parent="AppTheme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Dialog_dim" parent="AppTheme.Dialog">
+
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AppTheme.Translucent" mce_bogus="1" parent="AppTheme">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!--
+             Note that we use the base animation style here (that is no
+             animations) because we really have no idea how this kind of
+             activity will be used.
+        -->
+    </style>
+
+    <style name="Theme.Translucent" mce_bogus="1" parent="AppTheme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorForeground">#fff</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="Dialog_loading" parent="Dialog_Translucent_NoTitle">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/oer_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

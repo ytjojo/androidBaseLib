@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <declare-styleable name="TextAppearance">
+
+        <!-- Text color. -->
+        <attr name="android:textColor" />
+        <!-- Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). -->
+        <attr name="android:textSize" />
+        <!-- Style (bold, italic, bolditalic) for the text. -->
+        <attr name="android:textStyle" />
+        <!-- Typeface (normal, sans, serif, monospace) for the text. -->
+        <attr name="android:typeface" />
+        <!-- Color of the text selection highlight. -->
+        <attr name="android:textColorHighlight" />
+        <!-- Color of the hint text. -->
+        <attr name="android:textColorHint" />
+        <!-- Color of the links. -->
+        <attr name="android:textColorLink" />
+    </declare-styleable>
+    <declare-styleable name="EditText">
+
+        <!-- 总共输入长度 -->
+        <attr name="totalLength" format="integer" />
+        <!-- 每组的长度 -->
+        <attr name="eachLength" format="integer" />
+        <!-- 分隔符 -->
+        <attr name="delimiter" format="string" />
+        <!-- 占位符 -->
+        <attr name="placeHolder" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <!-- PagerSlidingTabStrip -->
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="slidingBlock" format="reference|color" />
+        <attr name="allowWidthFull" format="boolean" />
+        <attr name="disableViewPager" format="boolean" />
+        <attr name="disableTensileSlidingBlock" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
+    </declare-styleable>
+
+    <attr name="text" format="string" />
+    <attr name="textSize" format="dimension" />
+    <attr name="textOriginColor" format="color|reference" />
+    <attr name="textColor" format="color|reference" />
+    <attr name="textChangeColor" format="color|reference" />
+    <attr name="progress" format="float" />
+    <attr name="direction">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+        <enum name="top" value="2" />
+        <enum name="bottom" value="3" />
+    </attr>
+
+    <declare-styleable name="ColorTrackView">
+        <attr name="text" />
+        <attr name="textSize" />
+        <attr name="textOriginColor" />
+        <attr name="textChangeColor" />
+        <attr name="progress" />
+        <attr name="direction" />
+    </declare-styleable>
+    <declare-styleable name="UploadProgressView">
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="progress" />
+    </declare-styleable>
+    <declare-styleable name="AutofitTextView">
+        <attr name="minTextSize" format="dimension" />
+        <attr name="precision" format="float" />
+        <attr name="sizeToFit" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ExpandedCircleProgressView">
+        <attr name="innerCircleSize" format="dimension" />
+        <attr name="outerCircleSize" format="dimension" />
+        <attr name="innerCircleColor" format="color" />
+        <attr name="outerCircleColor" format="color" />
+        <attr name="textProgressColor" format="color" />
+        <attr name="progressCircleColor" format="color" />
+        <attr name="outerCircleLineWidth" format="dimension" />
+        <attr name="textProgressSize" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MarqueeView">
+        <attr name="marqueeSpeed" format="integer" />
+        <attr name="pause" format="integer" />
+        <attr name="autoStart" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CircleButton">
+        <attr name="cb_color" format="color" />
+        <attr name="cb_pressed_ring_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="EdgeEffectView">
+        <attr name="edgeeffect_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_num" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="NumberProgressBarStyle">
+        <attr name="numberProgressBar" format="reference" />
+    </declare-styleable>
+ <declare-styleable name="ProgressWheel">
+        <attr name="text" />
+        <attr name="textColor"/>
+        <attr name="textSize"></attr>
+        <attr name="barColor" format="color"/>
+        <attr name="rimColor" format="color"/>
+        <attr name="rimWidth" format="dimension"/>
+        <attr name="spinSpeed" format="dimension"/>
+        <attr name="delayMillis" format="integer"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="radius"/>
+        <attr name="barWidth" format="dimension"/>
+        <attr name="barLength" format="dimension"/>
+        <attr name="contourColor" format="color"/>
+        <attr name="contourSize" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="circularProgressBarStyle" format="reference"/>
+
+      <!-- ColorFilterImageButton -->
+    <declare-styleable name="ColorFilterImageButton">
+        <!-- -5 ~ 5 -->
+        <attr name="filterRedVector" format="float"/>
+        <attr name="filterGreenVector" format="float"/>
+        <attr name="filterBlueVector" format="float"/>
+        <!-- 0 ~ 1 -->
+        <attr name="filterAlphaVector" format="float"/>
+        <!-- -300 ~ 300 -->
+        <attr name="filterBrightnessVector" format="float"/>
+    </declare-styleable>
+      <declare-styleable name="DrawInsetsFramelayout">
+        <attr name="insetBackground" format="reference" />
+    </declare-styleable>
+      <declare-styleable name="ScrimInsetsView">
+        <attr name="insetForeground" format="reference" />
+    </declare-styleable>
+    
+       <declare-styleable name="MoreTextStyle">
+        <attr name="textSize"/>
+        <attr name="textColor"/>
+        <attr name="maxLine" format="integer" />
+        <attr name="text"  />
+    </declare-styleable>
+    
+        <declare-styleable name="MaterialRippleLayout">
+        <attr name="mrl_rippleColor" format="color" localization="suggested" />
+        <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
+        <attr name="mrl_rippleOverlay" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleAlpha" format="float" localization="suggested" />
+        <attr name="mrl_rippleDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleFadeDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleHover" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleBackground" format="color" localization="suggested" />
+        <attr name="mrl_rippleDelayClick" format="boolean" localization="suggested" />
+        <attr name="mrl_ripplePersistent" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
+    </declare-styleable>
+</resources>

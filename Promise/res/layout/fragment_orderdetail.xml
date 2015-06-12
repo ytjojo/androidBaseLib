@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/RootViewStyle"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+             android:id="@+id/tv_shootingDate"
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_action_alarm"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="拍摄日期" />
+
+        <TextView
+            style="@style/TvItemContent"
+            android:text="2015-12-01" />
+    </LinearLayout>
+
+    
+    <View style="@style/HorizontalDividerStyle" />
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+             android:id="@+id/tv_costmerName"
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_action_alarm"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="客户姓名" />
+
+        <TextView
+            style="@style/TvItemContent"
+            android:text="2015-12-01" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalDividerStyle" />
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+             android:id="@+id/tv_phone"
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_communication_call"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="客户手机" />
+
+        <TextView
+            style="@style/TvItemContent"
+            android:text="2015-12-01" />
+    </LinearLayout>
+    
+    <View style="@style/HorizontalDividerStyle" />
+
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_communication_location_on"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="拍摄地点" />
+
+        <TextView
+             android:id="@+id/tv_shootingLocation"
+            style="@style/TvItemContentFill"
+            android:maxLength="20"
+            android:text="杭州市滨江区" />
+        <ImageView 
+            style="@style/IvRightStyle"
+            android:src="@drawable/ic_hardware_keyboard_arrow_right"
+            />
+    </LinearLayout>
+
+    <View style="@style/HorizontalDividerStyle" />
+
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+             android:id="@+id/tv_mmId"
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_notification_sms"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="微信号    " />
+
+        <TextView
+            style="@style/TvItemContent"
+            android:text="2015-12-01" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalDividerStyle" />
+
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_image_camera_alt"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="拍摄套餐" />
+
+        <TextView
+             android:id="@+id/tv_orderPackege"
+            style="@style/TvItemContent"
+            android:text="双机位5800" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalDividerStyle" />
+
+    <LinearLayout
+        style="@style/ItemLayoutStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TvItemName"
+            android:drawableLeft="@drawable/ic_action_assignment"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:text="备        注" />
+
+        <TextView
+             android:id="@+id/tv_remarks"
+            style="@style/TvItemContent"
+            android:text="2015-12-01" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalDividerStyle" />
+
+
+</LinearLayout>
