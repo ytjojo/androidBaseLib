@@ -15,7 +15,7 @@ import com.kerkr.edu.app.Constans;
 public class LogBase
 {
     
-    public final static String customTagPrefix = BaseApplication.getInstance().mAppName; //自己的AP名称
+    public  static String customTagPrefix ; //自己的AP名称
     
     private final static int logLevel = Log.VERBOSE;
     
@@ -42,6 +42,7 @@ public class LogBase
         if (classLogger == null)
         {
             classLogger = new LogBase(className);
+            customTagPrefix = BaseApplication.getInstance().mAppName;
             sLoggerTable.put(className, classLogger);
         }
         return classLogger;

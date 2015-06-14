@@ -33,13 +33,10 @@ public class MainActivity extends BaseActivity{
         return false;
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public BaseFragment getRootFragment() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public Class<? extends BaseFragment> getRootFragmentClass() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }

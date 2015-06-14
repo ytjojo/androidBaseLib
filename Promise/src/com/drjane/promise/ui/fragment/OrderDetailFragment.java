@@ -10,10 +10,12 @@
  */
 package com.drjane.promise.ui.fragment;
 
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.FragmentArg;
 import org.androidannotations.annotations.ViewById;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import com.drjane.promise.R;
 import com.drjane.promise.model.Order;
 import com.kerkr.edu.app.BaseFragment;
+import com.kerkr.edu.log.VALog;
 
 /**
  * <一句话功能简述>
@@ -74,6 +77,22 @@ public class OrderDetailFragment extends BaseFragment {
     public void onUserVisble() {
         // TODO Auto-generated method stub
         
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	// TODO Auto-generated method stub
+    	super.onCreate(savedInstanceState);
+    	VALog.i("create");
+    }
+    @Override
+    public void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	VALog.i("destroy");
+    }
+    @AfterViews
+    public void init(){
+    	VALog.i("createView");
     }
     
     /**

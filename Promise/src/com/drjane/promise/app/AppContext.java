@@ -10,7 +10,10 @@
  */
 package com.drjane.promise.app;
 
+
+import com.drjane.promise.R;
 import com.kerkr.edu.app.BaseApplication;
+import com.kerkr.edu.log.VALog;
 
 
 /**
@@ -31,5 +34,7 @@ public class AppContext extends BaseApplication {
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+        mAppName = getResources().getString(R.string.app_name);
+        VALog.setTag(mAppName);
     }
 }

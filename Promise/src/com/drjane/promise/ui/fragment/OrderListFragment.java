@@ -18,6 +18,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -77,6 +78,7 @@ public class OrderListFragment extends BaseFragment {
     
     @AfterViews
     public void initView() {
+    	VALog.i("createView");
         mListView.setPullLoadEnable(true);
         mListView.setPullRefreshEnable(true);
         mListView.setOnChildClickListener(new OnChildClickListener() {
@@ -90,6 +92,15 @@ public class OrderListFragment extends BaseFragment {
                 return false;
             }
         });
+        mListView.setOnGroupClickListener(new OnGroupClickListener() {
+			
+			@Override
+			public boolean onGroupClick(ExpandableListView parent, View v,
+					int groupPosition, long id) {
+				// TODO Auto-generated method stub
+				return true;
+			}
+		});
         //点击不收缩
         mListView.setOnGroupClickListener(new OnGroupClickListener() {
             
@@ -217,6 +228,18 @@ public class OrderListFragment extends BaseFragment {
         }
     }
     
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	// TODO Auto-generated method stub
+    	super.onCreate(savedInstanceState);
+    	VALog.i("create");
+    }
+    @Override
+    public void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	VALog.i("destory");
+    }
     /**
      * @param menu
      * @param inflater
@@ -227,7 +250,12 @@ public class OrderListFragment extends BaseFragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_empty, menu);
     }
-    
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+    	// TODO Auto-generated method stub
+    	super.onHiddenChanged(hidden);
+    	VALog.i("hiddenchanged" + hidden);
+    }
     /**
      * 
      */

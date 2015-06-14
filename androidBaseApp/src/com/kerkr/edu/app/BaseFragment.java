@@ -74,6 +74,7 @@ public abstract class BaseFragment extends Fragment {
         return null;
     }
     
+    
     public void setTitle(String title) {
         mActivity.setMiddleTitle(title);
     }
@@ -107,17 +108,6 @@ public abstract class BaseFragment extends Fragment {
             isVisible = true;
             
             onUserVisble();
-            FragmentManager fm = mActivity.getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            List<Fragment> list = fm.getFragments();
-            if (CollectionUtils.isValid(list)) {
-                
-                for (Fragment f : list) {
-                    if (f != null && f.isAdded() && f != this)
-                        ft.hide(f);
-                }
-            }
-            ft.commitAllowingStateLoss();
             
         }
         else {
@@ -152,9 +142,9 @@ public abstract class BaseFragment extends Fragment {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         mloadDialog = new Dialog(getActivity(), R.style.Dialog_Translucent_NoTitle);
-        if (getUserVisibleHint() && !isVisible) {
-            setUserVisibleHint(true);
-        }
+//        if (getUserVisibleHint() && !isVisible) {
+//            setUserVisibleHint(true);
+//        }
         /* 
          toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
              @Override
@@ -172,10 +162,10 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
+    	setRetainInstance(true);
+    	setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
         EventBus.getDefault().registerSticky(this);
-        setHasOptionsMenu(true);
         
     }
     
@@ -222,6 +212,16 @@ public abstract class BaseFragment extends Fragment {
             throw new RuntimeException(e);
         }
         
+    }
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+    	// TODO Auto-generated method stub
+    	super.onHiddenChanged(hidden);
+    	if(hidden){
+    		onHidden();
+    	}else{
+    		onUserVisble();
+    	}
     }
     
     public void umengEvent(String eventId, String label) {

@@ -7,6 +7,9 @@ public class VALog {
     
     static LogBase myLogger;
     
+    public static void setTag(String tag){
+    	LogBase.customTagPrefix = tag;
+    }
     /**
      * Purpose:Mark user one
      *

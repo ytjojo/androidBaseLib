@@ -63,11 +63,11 @@ public final class CreateOrderFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mRemarksEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_remarks));
-        mOrderPackegeEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_orderPackege));
         mCustomerNameEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_customerName));
-        mMMIdEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_mmId));
         mPhoneEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_phone));
+        mMMIdEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_mmId));
+        mOrderPackegeEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_orderPackege));
+        mRemarksEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_remarks));
         mShootingDatTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingDate));
         {
             View view = hasViews.findViewById(com.drjane.promise.R.id.layout_selectRemind);
