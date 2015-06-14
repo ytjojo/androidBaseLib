@@ -2,7 +2,8 @@ package com.kerkr.edu.textView;
 
 
 
-import com.kerkr.edu.utill.DensityUtil;
+
+import com.kerkr.edu.design.DensityUtil;
 
 import android.content.Context;
 import android.util.AttributeSet;

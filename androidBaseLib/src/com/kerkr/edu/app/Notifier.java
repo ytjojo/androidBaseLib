@@ -5,7 +5,6 @@ import java.util.Map.Entry;
 
 import com.kerkr.edu.receiver.AlarmReceiver;
 import com.kerkr.edu.receiver.DeleteNotificationsReceiver;
-import com.kerkr.edu.utill.CompatUtil;
 
 import android.R.integer;
 import android.app.Activity;

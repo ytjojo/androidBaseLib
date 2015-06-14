@@ -27,7 +27,6 @@ import android.widget.TextView;
 
 import com.drjane.promise.R;
 import com.kerkr.edu.app.BaseFragment;
-import com.kerkr.edu.utill.DrawerToast;
 
 /**
  * <一句话功能简述>

@@ -14,10 +14,10 @@ import java.util.List;
 
 import android.text.TextUtils;
 
+import com.kerkr.edu.String.JsonParser;
 import com.kerkr.edu.cache.SharePreferenceService;
+import com.kerkr.edu.design.DensityUtil;
 import com.kerkr.edu.utill.CollectionUtils;
-import com.kerkr.edu.utill.DensityUtil;
-import com.kerkr.edu.utill.JsonParser;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;

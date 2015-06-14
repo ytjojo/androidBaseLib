@@ -21,7 +21,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.kerkr.edu.utill.CompatUtil;
+import com.kerkr.edu.app.CompatUtil;
 
 
 /**

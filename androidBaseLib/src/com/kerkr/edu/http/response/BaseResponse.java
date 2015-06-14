@@ -22,5 +22,6 @@ import java.io.Serializable;
  * @since  [产品/模块版本]
  */
 public class BaseResponse implements Serializable{
-    
+	public int code;
+	public String message;
 }

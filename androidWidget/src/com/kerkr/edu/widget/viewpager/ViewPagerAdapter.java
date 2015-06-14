@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.kerkr.edu.Image.ImageLoaderUtill;
 import com.kerkr.edu.dto.BrandBanner;
-import com.kerkr.edu.utill.ImageLoaderUtill;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**

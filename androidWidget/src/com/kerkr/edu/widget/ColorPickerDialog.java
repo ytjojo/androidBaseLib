@@ -20,7 +20,8 @@
  */
 package com.kerkr.edu.widget;
 
-import com.kerkr.edu.utill.AppUtil;
+
+import com.kerkr.edu.app.AppUtil;
 
 import android.app.Dialog;
 import android.content.Context;

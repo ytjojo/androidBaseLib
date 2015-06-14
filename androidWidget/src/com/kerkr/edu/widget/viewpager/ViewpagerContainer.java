@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.kerkr.edu.utill.ImageLoaderUtill;
+import com.kerkr.edu.Image.ImageLoaderUtill;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class ViewpagerContainer extends FrameLayout {

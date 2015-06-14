@@ -17,8 +17,8 @@ import java.util.Date;
 import com.drjane.promise.R;
 import com.drjane.promise.calendar.Utils;
 import com.kerkr.edu.app.BaseFragment;
+import com.kerkr.edu.app.DrawerToast;
 import com.kerkr.edu.log.VALog;
-import com.kerkr.edu.utill.DrawerToast;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

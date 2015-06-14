@@ -13,9 +13,9 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
+import com.kerkr.edu.design.DensityUtil;
 import com.kerkr.edu.dto.UMengPush;
 import com.kerkr.edu.utill.CollectionUtils;
-import com.kerkr.edu.utill.DensityUtil;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
 

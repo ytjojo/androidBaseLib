@@ -1,5 +1,7 @@
 package com.kerkr.edu.widget;
 
+import com.kerkr.edu.design.DensityUtil;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -10,7 +12,6 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.OverScroller;
-import com.kerkr.edu.utill.DensityUtil;
 
 public class StickyNavLayou extends LinearLayout {
 	private ListView listView;

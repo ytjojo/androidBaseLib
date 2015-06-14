@@ -1,6 +1,6 @@
 package com.kerkr.edu.observer;
 
-import com.kerkr.edu.kit.CallKit;
+import com.kerkr.edu.app.CallKit;
 
 import android.content.Context;
 import android.database.ContentObserver;

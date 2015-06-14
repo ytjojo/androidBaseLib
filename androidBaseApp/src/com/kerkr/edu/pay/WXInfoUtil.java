@@ -55,9 +55,6 @@ package com.kerkr.edu.pay;
  }
  */
 
-import android.os.Message;
-import android.text.TextUtils;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -65,8 +62,11 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import android.os.Message;
+import android.text.TextUtils;
+
+import com.kerkr.edu.String.JsonParser;
 import com.kerkr.edu.log.VALog;
-import com.kerkr.edu.utill.JsonParser;
 
 
 public class WXInfoUtil {

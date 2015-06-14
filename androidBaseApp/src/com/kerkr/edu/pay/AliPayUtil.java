@@ -52,7 +52,7 @@ import android.widget.Toast;
 import com.alipay.android.app.IAlixPay;
 import com.alipay.android.app.IRemoteServiceCallback;
 import com.kerkr.edu.dialog.DialogTools;
-import com.kerkr.edu.utill.AssetsUtil;
+import com.kerkr.edu.resource.AssetsUtil;
 
 public class AliPayUtil {
 	Activity mActivity = null;

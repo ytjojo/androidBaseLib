@@ -2,7 +2,7 @@ package com.kerkr.edu.kit;
 
 import java.util.Random;
 
-import com.kerkr.edu.utill.DensityUtil;
+import com.kerkr.edu.design.DensityUtil;
 
 import android.content.Context;
 import android.graphics.Bitmap;

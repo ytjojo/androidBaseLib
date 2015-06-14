@@ -8,9 +8,7 @@ import com.kerkr.edu.app.Constans;
 import com.kerkr.edu.eventbus.DefaultEvent;
 import com.kerkr.edu.log.VALog;
 import com.kerkr.edu.utill.CollectionUtils;
-import com.kerkr.edu.utill.DrawerToast;
 import com.kerkr.edu.utill.NetChecker;
-import com.kerkr.edu.utill.ScreenUtils;
 import com.umeng.analytics.MobclickAgent;
 import com.ytjojo.androidapplib.R;
 

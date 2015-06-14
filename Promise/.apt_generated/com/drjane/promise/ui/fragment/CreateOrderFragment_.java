@@ -63,27 +63,12 @@ public final class CreateOrderFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mCustomerNameEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_customerName));
         mPhoneEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_phone));
-        mMMIdEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_mmId));
         mOrderPackegeEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_orderPackege));
         mRemarksEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_remarks));
         mShootingDatTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingDate));
-        {
-            View view = hasViews.findViewById(com.drjane.promise.R.id.layout_selectRemind);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        CreateOrderFragment_.this.selectRemindType();
-                    }
-
-                }
-                );
-            }
-        }
+        mMMIdEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_mmId));
+        mCustomerNameEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_customerName));
         {
             View view = hasViews.findViewById(com.drjane.promise.R.id.layout_selectDate);
             if (view!= null) {
@@ -93,6 +78,21 @@ public final class CreateOrderFragment_
                     @Override
                     public void onClick(View view) {
                         CreateOrderFragment_.this.selectDate();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.drjane.promise.R.id.layout_selectRemind);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        CreateOrderFragment_.this.selectRemindType();
                     }
 
                 }

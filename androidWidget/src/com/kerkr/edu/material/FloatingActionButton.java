@@ -1,6 +1,6 @@
 package com.kerkr.edu.material;
 
-import com.kerkr.edu.utill.ScreenUtils;
+import com.kerkr.edu.design.ScreenUtils;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
 

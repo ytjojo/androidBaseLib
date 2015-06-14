@@ -46,12 +46,11 @@ import android.widget.TextView;
 
 import com.kerkr.edu.app.ActivityTack;
 import com.kerkr.edu.app.Constans;
+import com.kerkr.edu.design.PaletteUtils;
+import com.kerkr.edu.design.ScreenUtils;
 import com.kerkr.edu.eventbus.DefaultEvent;
 import com.kerkr.edu.log.VALog;
-import com.kerkr.edu.utill.AppUtil;
 import com.kerkr.edu.utill.CollectionUtils;
-import com.kerkr.edu.utill.PaletteUtils;
-import com.kerkr.edu.utill.ScreenUtils;
 import com.kerkr.edu.widget.PagerSlidingTabStrip;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;

@@ -3,8 +3,8 @@ package com.kerkr.edu.popup;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kerkr.edu.utill.DensityUtil;
-import com.kerkr.edu.utill.ScreenUtils;
+import com.kerkr.edu.design.DensityUtil;
+import com.kerkr.edu.design.ScreenUtils;
 import com.ytjojo.widget.R;
 
 import android.app.Activity;

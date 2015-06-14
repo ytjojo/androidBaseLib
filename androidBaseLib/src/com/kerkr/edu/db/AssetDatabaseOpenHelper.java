@@ -7,7 +7,7 @@ package com.kerkr.edu.db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.kerkr.edu.utill.FileUtil;
+import com.kerkr.edu.File.FileUtil;
 
 import java.io.File;
 import java.io.IOException;

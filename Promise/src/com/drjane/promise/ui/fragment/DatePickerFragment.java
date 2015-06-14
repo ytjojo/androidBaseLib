@@ -17,7 +17,7 @@ import org.androidannotations.annotations.EFragment;
 
 import com.drjane.promise.R;
 import com.kerkr.edu.app.BaseFragment;
-import com.kerkr.edu.utill.CompatUtil;
+import com.kerkr.edu.app.CompatUtil;
 
 import de.greenrobot.event.EventBus;
 

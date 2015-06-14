@@ -1,6 +1,8 @@
 package com.kerkr.edu.blur;
 
-import com.kerkr.edu.kit.FastBlur;
+
+
+import com.kerkr.edu.design.FastBlur;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

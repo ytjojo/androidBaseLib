@@ -9,8 +9,8 @@
 package com.kerkr.edu.adapterView;
 
 
+import com.kerkr.edu.app.CompatUtil;
 import com.kerkr.edu.log.VALog;
-import com.kerkr.edu.utill.CompatUtil;
 import com.ytjojo.widget.R;
 
 import android.content.Context;
