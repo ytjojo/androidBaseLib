@@ -129,51 +129,60 @@
     <declare-styleable name="NumberProgressBarStyle">
         <attr name="numberProgressBar" format="reference" />
     </declare-styleable>
- <declare-styleable name="ProgressWheel">
+    <declare-styleable name="ProgressWheel">
         <attr name="text" />
-        <attr name="textColor"/>
+        <attr name="textColor" />
         <attr name="textSize"></attr>
-        <attr name="barColor" format="color"/>
-        <attr name="rimColor" format="color"/>
-        <attr name="rimWidth" format="dimension"/>
-        <attr name="spinSpeed" format="dimension"/>
-        <attr name="delayMillis" format="integer"/>
-        <attr name="circleColor" format="color"/>
-        <attr name="radius"/>
-        <attr name="barWidth" format="dimension"/>
-        <attr name="barLength" format="dimension"/>
-        <attr name="contourColor" format="color"/>
-        <attr name="contourSize" format="dimension"/>
+        <attr name="barColor" format="color" />
+        <attr name="rimColor" format="color" />
+        <attr name="rimWidth" format="dimension" />
+        <attr name="spinSpeed" format="dimension" />
+        <attr name="delayMillis" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="radius" />
+        <attr name="barWidth" format="dimension" />
+        <attr name="barLength" format="dimension" />
+        <attr name="contourColor" format="color" />
+        <attr name="contourSize" format="dimension" />
     </declare-styleable>
 
-    <attr name="circularProgressBarStyle" format="reference"/>
+    <attr name="circularProgressBarStyle" format="reference" />
 
-      <!-- ColorFilterImageButton -->
+    <!-- ColorFilterImageButton -->
     <declare-styleable name="ColorFilterImageButton">
+
         <!-- -5 ~ 5 -->
-        <attr name="filterRedVector" format="float"/>
-        <attr name="filterGreenVector" format="float"/>
-        <attr name="filterBlueVector" format="float"/>
+        <attr name="filterRedVector" format="float" />
+        <attr name="filterGreenVector" format="float" />
+        <attr name="filterBlueVector" format="float" />
         <!-- 0 ~ 1 -->
-        <attr name="filterAlphaVector" format="float"/>
+        <attr name="filterAlphaVector" format="float" />
         <!-- -300 ~ 300 -->
-        <attr name="filterBrightnessVector" format="float"/>
+        <attr name="filterBrightnessVector" format="float" />
     </declare-styleable>
-      <declare-styleable name="DrawInsetsFramelayout">
+    <declare-styleable name="DrawInsetsFramelayout">
         <attr name="insetBackground" format="reference" />
     </declare-styleable>
-      <declare-styleable name="ScrimInsetsView">
+    <declare-styleable name="ScrimInsetsView">
         <attr name="insetForeground" format="reference" />
     </declare-styleable>
-    
-       <declare-styleable name="MoreTextStyle">
-        <attr name="textSize"/>
-        <attr name="textColor"/>
+    <declare-styleable name="MoreTextStyle">
+        <attr name="textSize" />
+        <attr name="textColor" />
         <attr name="maxLine" format="integer" />
-        <attr name="text"  />
+        <attr name="text" />
     </declare-styleable>
-    
-        <declare-styleable name="MaterialRippleLayout">
+    <declare-styleable name="SelectableRoundedImageView">
+        <attr name="sriv_left_top_corner_radius" format="dimension" />
+        <attr name="sriv_right_top_corner_radius" format="dimension" />
+        <attr name="sriv_left_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_right_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+    <declare-styleable name="MaterialRippleLayout">
         <attr name="mrl_rippleColor" format="color" localization="suggested" />
         <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
         <attr name="mrl_rippleOverlay" format="boolean" localization="suggested" />
@@ -187,4 +196,5 @@
         <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
         <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
     </declare-styleable>
+
 </resources>
