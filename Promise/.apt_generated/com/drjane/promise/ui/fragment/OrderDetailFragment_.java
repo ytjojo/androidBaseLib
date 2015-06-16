@@ -64,12 +64,12 @@ public final class OrderDetailFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mLocationTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingLocation));
-        mPhoneTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_phone));
-        mRemarksTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_remarks));
         mOrderPackegeTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_orderPackege));
-        mDateTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingDate));
+        mRemarksTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_remarks));
         mNameTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_costmerName));
+        mDateTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingDate));
+        mPhoneTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_phone));
+        mLocationTv = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_shootingLocation));
         mMMId = ((TextView) hasViews.findViewById(com.drjane.promise.R.id.tv_mmId));
         init();
     }
