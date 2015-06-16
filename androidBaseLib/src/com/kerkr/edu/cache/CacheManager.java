@@ -10,13 +10,14 @@
  */
 package com.kerkr.edu.cache;
 
+import com.kerkr.edu.String.JsonParser;
 import com.kerkr.edu.app.BaseApplication;
-import com.kerkr.edu.consts.SharepreferConsts;
 import com.kerkr.edu.dto.CacheData;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.TextUtils;
 
 /**
  * <一句话功能简述>
@@ -30,13 +31,14 @@ import android.content.SharedPreferences.Editor;
 public class CacheManager {
     public CacheData mCacheData = new CacheData();
     
+    final static String APP_CACHE = "cache";
     
     private static CacheManager mInstance;
     
-    public static CacheManager getInstance(){
-        if(mInstance == null){
+    public static CacheManager getInstance() {
+        if (mInstance == null) {
             synchronized (CacheManager.class) {
-                if(mInstance == null){
+                if (mInstance == null) {
                     mInstance = new CacheManager();
                 }
             }
@@ -44,24 +46,45 @@ public class CacheManager {
         return mInstance;
     }
     
-    public void save(){
-        SharedPreferences pref = BaseApplication.getInstance().getSharedPreferences(SharepreferConsts.APP_LOCAL_SET, Context.MODE_APPEND);
+    public void save() {
+        
+        String cacheJson = JsonParser.getInstance().getJsonFromObject(mCacheData);
+        if (TextUtils.isEmpty(cacheJson)) {
+            return;
+        }
+        SharedPreferences pref = BaseApplication.getInstance().getSharedPreferences(APP_CACHE, Context.MODE_APPEND);
         Editor editor = pref.edit();
-        editor.putInt("cityID", mCacheData.getCityId());
-        editor.putString("lastLatitude", mCacheData.getLatitude() + "");
-        editor.putString("lastLongitude", mCacheData.getLongitude() + "");
+        editor.putString(APP_CACHE, cacheJson);
         editor.commit();
-      
+        
     }
     
-    public void reload(){
-        
+    public void reload() {
+        SharedPreferences sp = BaseApplication.getInstance().getSharedPreferences(APP_CACHE, Context.MODE_APPEND);
+        String jsonString = sp.getString(APP_CACHE, "");
+        if(TextUtils.isEmpty(jsonString)){
+            return;
+        }
+        mCacheData = (CacheData) JsonParser.getInstance().getObjectFromJson(jsonString, CacheData.class);
     }
-    public void clean(){
+    
+    public void clean() {
         
-        
+        SharedPreferences sp = BaseApplication.getInstance().getSharedPreferences(APP_CACHE, Context.MODE_APPEND);
+        sp.edit().clear().commit();
     }
-    public CacheData getCacheData(){
-       return  mCacheData;
+    
+    public CacheData getCacheData() {
+        reload();
+        if (mCacheData == null) {
+            mCacheData = new CacheData();
+        }
+        return mCacheData;
+    }
+    public boolean isLogin(){
+        if(mCacheData != null && !TextUtils.isEmpty(mCacheData.getPhone())){
+            return true;
+        }
+        return false;
     }
 }

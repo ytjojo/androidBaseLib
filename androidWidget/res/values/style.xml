@@ -86,5 +86,9 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-
+   <style name="TextAppearance.FloatLabel" parent="android:Widget">
+        <item name="android:textColor">@color/md_blue_500</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
 </resources>

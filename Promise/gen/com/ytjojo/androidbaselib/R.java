@@ -422,9 +422,9 @@ public final class R {
 		public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020039;
 		public static final int abc_textfield_search_material = 0x7f02003a;
 		public static final int background_tab = 0x7f02003b;
-		public static final int ic_launcher = 0x7f02005a;
-		public static final int noimage = 0x7f020061;
-		public static final int shape_toast = 0x7f020067;
+		public static final int ic_launcher = 0x7f02005b;
+		public static final int noimage = 0x7f020062;
+		public static final int shape_toast = 0x7f02006a;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f0a0064;
@@ -538,10 +538,10 @@ public final class R {
 		public static final int abc_search_view = 0x7f030016;
 		public static final int abc_select_dialog_material = 0x7f030017;
 		public static final int abc_simple_dropdown_hint = 0x7f030018;
-		public static final int select_dialog_item_material = 0x7f03002a;
-		public static final int select_dialog_multichoice_material = 0x7f03002b;
-		public static final int select_dialog_singlechoice_material = 0x7f03002c;
-		public static final int support_simple_spinner_dropdown_item = 0x7f03002d;
+		public static final int select_dialog_item_material = 0x7f03002b;
+		public static final int select_dialog_multichoice_material = 0x7f03002c;
+		public static final int select_dialog_singlechoice_material = 0x7f03002d;
+		public static final int support_simple_spinner_dropdown_item = 0x7f03002e;
 	}
 	public static final class raw {
 		public static final int busybox_g1 = 0x7f050000;

@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\gitHome\\androidBaseLib\\androidBaseLib\\src\\com\\kerkr\\edu\\download\\aidl\\IDownloadService.aidl
+ * Original file: E:\\git_androidLib\\androidBaseLib\\src\\com\\kerkr\\edu\\download\\aidl\\IDownloadService.aidl
  */
 package com.kerkr.edu.download.aidl;
 public interface IDownloadService extends android.os.IInterface

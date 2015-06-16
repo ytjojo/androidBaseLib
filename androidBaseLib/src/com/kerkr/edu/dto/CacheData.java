@@ -3,146 +3,147 @@ package com.kerkr.edu.dto;
 import com.kerkr.edu.app.Constans;
 
 public class CacheData {
-    private String _cookie;
+    private String cookie;
     
-    private String _uuid;
+    private String uuid;
     
-    private int _cityId;
+    private int cityId;
     
-    private String _currentVersion;
+    private String currentVersion;
     
-    private double _longitude;
+    private double longitude;
     
-    private double _latitude;
+    private double latitude;
     
-    private String _build;
+    private String build;
     
-    private String _phone;
+    private String phone;
     
     private String name;
     
-    private String _password;
+    private String password;
     
     private String eVip;
     
     //新增微信的unionid
-    private String _unionid;
+    private String unionid;
     
     
     
     public void setUnionid(String unionid) {
-        this._unionid = unionid;
+        this.unionid = unionid;
     }
     
     public String getUnionid() {
-        return _unionid;
+        return unionid;
     }
     
     public CacheData() {
-        _cookie = "";
-        _uuid = "";
-        _cityId = Constans.DEFAULT_CITY_ID;
-        _currentVersion = "";
-        _longitude = 0.0;
-        _latitude = 0.0;
+        cookie = "";
+        uuid = "";
+        cityId = Constans.DEFAULT_CITY_ID;
+        currentVersion = "";
+        longitude = 0.0;
+        latitude = 0.0;
         eVip = "";
-        _phone = "";
-        _unionid = "";
+        phone = "";
+        unionid = "";
     }
     
-    public String getBuild() {
-        return _build;
-    }
-    
-    public void setBuild(String build) {
-        _build = build;
-    }
-    
+   
     public String getCookie() {
-        return _cookie;
+        return cookie;
     }
-    
-    public void setCookie(final String cookie) {
-        _cookie = cookie;
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
     }
-    
-    public String getUUID() {
-        return _uuid;
+
+    public String getUuid() {
+        return uuid;
     }
-    
-    public void setUUID(final String uuid) {
-        _uuid = uuid;
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
-    
+
     public int getCityId() {
-        return _cityId;
+        return cityId;
     }
-    
+
     public void setCityId(int cityId) {
-        _cityId = cityId;
+        this.cityId = cityId;
     }
-    
-    public void SetCurrentVersion(final String currentVersion) {
-        _currentVersion = currentVersion;
-    }
-    
+
     public String getCurrentVersion() {
-        return _currentVersion;
+        return currentVersion;
     }
-    
-    public void setLonitude(double lonti) {
-        _longitude = lonti;
+
+    public void setCurrentVersion(String currentVersion) {
+        this.currentVersion = currentVersion;
     }
-    
+
     public double getLongitude() {
-        return _longitude;
+        return longitude;
     }
-    
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     public double getLatitude() {
-        return _latitude;
+        return latitude;
     }
-    
+
     public void setLatitude(double latitude) {
-        _latitude = latitude;
+        this.latitude = latitude;
     }
-    
+
+    public String getBuild() {
+        return build;
+    }
+
+    public void setBuild(String build) {
+        this.build = build;
+    }
+
     public String getPhone() {
-        return _phone;
+        return phone;
     }
-    
+
     public void setPhone(String phone) {
-        _phone = phone;
+        this.phone = phone;
     }
-    
-    public String getPassword() {
-        return _password;
-    }
-    
-    public void setPassword(String pwd) {
-        _password = pwd;
-    }
-    
-    public String geteVip() {
-        return eVip;
-    }
-    
-    public void seteVip(String eVip) {
-        this.eVip = eVip;
-    }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String geteVip() {
+        return eVip;
+    }
+
+    public void seteVip(String eVip) {
+        this.eVip = eVip;
+    }
+
     @Override
     public String toString() {
-        return "VACacheData{" + "_cookie='" + _cookie + '\'' + ", _uuid='" + _uuid + '\'' + ", _cityId=" + _cityId + ", _currentVersion='"
-                + _currentVersion + '\'' + ", _longtitude=" + _longitude + ", _latitude=" + _latitude + ", _build='" + _build + '\'' + ", _phone='"
-                + _phone + '\'' + ", name='" + name + '\'' + ", _password='" + _password + '\'' + ", eVip='" + eVip + '\'' + ", _unionid='"
-                + _unionid + '\'' + '}';
+        return "VACacheData{" + "cookie='" + cookie + '\'' + ", uuid='" + uuid + '\'' + ", cityId=" + cityId + ", currentVersion='"
+                + currentVersion + '\'' + ", longtitude=" + longitude + ", latitude=" + latitude + ", build='" + build + '\'' + ", phone='"
+                + phone + '\'' + ", name='" + name + '\'' + ", password='" + password + '\'' + ", eVip='" + eVip + '\'' + ", unionid='"
+                + unionid + '\'' + '}';
     }
 }
