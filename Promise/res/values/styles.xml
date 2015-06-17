@@ -2,7 +2,7 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="AppBaseCompatTheme"></style>
 
@@ -137,6 +137,16 @@
         <item name="android:listSelector">@drawable/emptyselector</item>
         <item name="android:singleLine">true</item>
         <item name="android:scrollbarStyle">outsideOverlay</item>
+    </style>
+
+    <style name="ButtonFill">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/textColorPrimary_black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

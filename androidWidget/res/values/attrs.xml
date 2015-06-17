@@ -18,6 +18,9 @@
         <!-- Color of the links. -->
         <attr name="android:textColorLink" />
     </declare-styleable>
+    <declare-styleable name="typespace">
+        <attr name="typefaceName" format="reference|string"  />
+    </declare-styleable>
     <declare-styleable name="EditText">
 
         <!-- 总共输入长度 -->
@@ -172,6 +175,7 @@
         <attr name="maxLine" format="integer" />
         <attr name="text" />
     </declare-styleable>
+
     <declare-styleable name="SelectableRoundedImageView">
         <attr name="sriv_left_top_corner_radius" format="dimension" />
         <attr name="sriv_right_top_corner_radius" format="dimension" />
@@ -182,6 +186,7 @@
         <attr name="sriv_oval" format="boolean" />
         <attr name="android:scaleType" />
     </declare-styleable>
+
     <declare-styleable name="MaterialRippleLayout">
         <attr name="mrl_rippleColor" format="color" localization="suggested" />
         <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
@@ -196,5 +201,38 @@
         <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
         <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
     </declare-styleable>
+
+    <declare-styleable name="AnimatedPathView">
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+        <attr name="fillColor" />
+        <attr name="phase" format="float" />
+        <attr name="duration" format="integer" />
+        <attr name="fillDuration" format="integer" />
+        <attr name="fillOffset" format="integer" />
+        <attr name="fadeFactor" format="float" />
+        <attr name="svgPath" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="SpotlightView">
+        <attr name="target" format="reference" />
+        <attr name="spotlight_mask" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="PathView">
+        <attr name="pathColor" format="color" />
+        <attr name="pathWidth" format="float" />
+        <attr name="svg" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="FloatLabelLayout">
+        <attr name="floatLabelTextAppearance" format="reference" />
+        <attr name="floatLabelPaddingLeft" format="reference|dimension" />
+        <attr name="floatLabelPaddingRight" format="reference|dimension" />
+        <attr name="floatLabelPaddingTop" format="reference|dimension" />
+        <attr name="floatLabelPaddingBottom" format="reference|dimension" />
+
+        <!-- The hint to display in the floating label -->
+
+        <attr name="floatLabelHint" format="reference|string" />
+    </declare-styleable>
+
 
 </resources>

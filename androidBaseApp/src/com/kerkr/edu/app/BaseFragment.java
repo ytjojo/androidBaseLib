@@ -157,6 +157,8 @@ public abstract class BaseFragment extends Fragment {
         getToolbar().setNavigationOnClickListener(l);
     }
     
+   
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
