@@ -19,7 +19,7 @@
             style="@style/TvItemContent"
             android:text="2015-12-01" />
     </LinearLayout>
-
+    
     
     <View style="@style/HorizontalDividerStyle" />
     <LinearLayout

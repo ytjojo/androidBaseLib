@@ -20,6 +20,7 @@ import com.baidu.mapapi.utils.DistanceUtil;
 import com.kerkr.edu.app.BaseApplication;
 import com.kerkr.edu.app.Constans;
 import com.kerkr.edu.cache.CacheManager;
+import com.kerkr.edu.dto.CacheData;
 import com.kerkr.edu.dto.CityInfo;
 import com.kerkr.edu.dto.PrinvinceInfo;
 import com.kerkr.edu.eventbus.ChangeCityEvent;
@@ -31,23 +32,24 @@ import de.greenrobot.event.EventBus;
 public class LocationManager {
     public static final int NEW_LOCATION_DELAY = 120;// 秒
     
-    
     // 记录的上次程序经纬度
     public double lastLatitude = 0;
     
     public double lastLongitude = 0;
     
     public BDLocation mCurrentLocation = null;
-    public CityInfo  currentLocationCity;
-    public  List<PrinvinceInfo> mStateInfo = null;
     
-    public  boolean isSucceedLocation;
+    public CityInfo currentLocationCity;
+    
+    public List<PrinvinceInfo> mStateInfo = null;
+    
+    public boolean isSucceedLocation;
     
     private long mLastGetLocationTime;
     
     private String currentAddress;
     
-    public  String getAdd() {
+    public String getAdd() {
         
         return currentAddress;
     }
@@ -158,17 +160,19 @@ public class LocationManager {
                 if (mStateInfo == null) {
                     location = null;
                     // mCacheData.setCityId(VAConst.DEFAULT_CITY_ID);
-//                    return;
+                    //                    return;
                 }
                 else {
-                    CacheManager.getInstance().mCacheData.setCityId(getCurrentCityID());
-                    CacheManager.getInstance().mCacheData.setLatitude(location.getLatitude());
-                    CacheManager.getInstance().mCacheData.setLonitude(location.getLongitude());
+                    CacheData mCacheData = CacheManager.getInstance().getCacheData();
+                    mCacheData.setLatitude(location.getLatitude());
+                    mCacheData.setLongitude(location.getLongitude());
+                    mCacheData.setCityId(getCurrentCityID());
                     
                     CacheManager.getInstance().save();
+                    
                 }
                 EventBus.getDefault().post(new LocationEvent(location));
-             
+                
             }
         }
         
@@ -185,7 +189,7 @@ public class LocationManager {
     /*
      * 根据LOCATION信息拿到城市ID；
      */
-    public  int getCurrentCityID() {
+    public int getCurrentCityID() {
         if (!isValidStateInfo() || mCurrentLocation == null) {
             // 定位失败返回默认杭州的cityID
         }
@@ -200,20 +204,20 @@ public class LocationManager {
                     CityInfo cityInfo = stateInfo.onlineCityList.get(j);
                     if (cityInfo.cityName.equals(city)) {// 定位的城市开通了悠先
                                                          // 成功定位了，如果和上次的不一致，弹出切换提示框
-                        if (   CacheManager.getInstance().mCacheData.getCityId() != cityInfo.cityId) {
+                        if (CacheManager.getInstance().mCacheData.getCityId() != cityInfo.cityId) {
                             
                             // 记录当前定位到的城市,广场中要用
                             currentLocationCity = cityInfo;
                             
                             // 只有当前页面是首页时，才弹出提示框切换城市
-//                            if (VAAppAplication.currentSelectBottomBtnId == 1) {
-//                                EventBus.getDefault().postSticky(new ChangeCityEvent(cityInfo));
-//                            }
+                            //                            if (VAAppAplication.currentSelectBottomBtnId == 1) {
+                            //                                EventBus.getDefault().postSticky(new ChangeCityEvent(cityInfo));
+                            //                            }
                         }
-                        return    CacheManager.getInstance().mCacheData.getCityId();// cityInfo.cityId;
+                        return CacheManager.getInstance().mCacheData.getCityId();// cityInfo.cityId;
                     }
                     else {// 城市未开通
-                        return    CacheManager.getInstance().mCacheData.getCityId();
+                        return CacheManager.getInstance().mCacheData.getCityId();
                     }
                 }
                 
@@ -225,7 +229,7 @@ public class LocationManager {
                 }
             }
         }
-        return    CacheManager.getInstance().mCacheData.getCityId();
+        return CacheManager.getInstance().mCacheData.getCityId();
     }
     
     // 根据城市id找名字
@@ -246,7 +250,7 @@ public class LocationManager {
         return "定位失败";
     }
     
-    public  boolean isValidStateInfo() {
+    public boolean isValidStateInfo() {
         return null != mStateInfo && !mStateInfo.isEmpty();
     }
     
@@ -279,7 +283,6 @@ public class LocationManager {
         // ---此处已在VAAppplication onCreate()中初始化;
         return DistanceUtil.getDistance(new LatLng(lati1, longi1), new LatLng(lati2, longi2));
     }
-    
     
     public List<PrinvinceInfo> getStateInfo() {
         return mStateInfo;

@@ -23,8 +23,6 @@ import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.kerkr.edu.String.JsonParser;
 import com.kerkr.edu.app.Constans;
-import com.kerkr.edu.http.request.BaseRequest;
-import com.kerkr.edu.http.response.BaseResponse;
 import com.kerkr.edu.log.VALog;
 import com.kerkr.edu.volley.MultiPartStringRequest;
 
@@ -52,7 +50,6 @@ public class VolleyHttpClient {
                 retryCount);
         HttpService.getHttpService().addToRequestQueue(request);
     }
-    
     
     /**
      * <一句话功能简述>
@@ -86,7 +83,7 @@ public class VolleyHttpClient {
                 VALog.d("请求成功" + JsonParser.getInstance().getJsonFromObject(response));
                 if (listener != null) {
                     
-                    //                    listener.OnFinished(response);
+                    listener.OnFinished(response);
                 }
             }
         };
@@ -101,10 +98,11 @@ public class VolleyHttpClient {
             }
         };
         final Map<String, String> params = new HashMap<String, String>();
-        params.put("msg", JsonParser.getInstance().getJsonFromObject(messageEx));
+        params.put("data", JsonParser.getInstance().getJsonFromObject(messageEx));
         httpPost(getAbsoluteUrl(""), clazz, params, responseListener, errorListener, retryCount);
         VALog.i("http post请求" + JsonParser.getInstance().getJsonFromObject(messageEx));
     }
+    
     /**
      * <一句话功能简述>
      * <功能详细描述>
@@ -142,6 +140,7 @@ public class VolleyHttpClient {
         
         HttpService.getHttpService().addToMultiPartRequestQueue(multiPartRequest);
     }
+    
     /**
      * <一句话功能简述>
      * <功能详细描述>
@@ -180,6 +179,7 @@ public class VolleyHttpClient {
         uploadFileStringReq(url, method, files, params, responseListener, errorListener, tag);
         
     }
+    
     /**
      * <一句话功能简述>
      * <功能详细描述>
@@ -191,14 +191,12 @@ public class VolleyHttpClient {
      * @see [类、类#方法、类#成员]
      */
     
-    public HashMap<String, String> setOAuthTokenParams(HashMap<String, String> header ) {
-
+    public HashMap<String, String> setOAuthTokenParams(HashMap<String, String> header) {
+        
         String accessToken = "";
-        header.put("Authorization", "Bearer" + " " + accessToken );
-        Base64.encodeToString(
-                (CLIENT_ID + ":" + CLIENT_SECRET).getBytes(),
-                Base64.NO_WRAP);
-       return header;
+        header.put("Authorization", "Bearer" + " " + accessToken);
+        Base64.encodeToString((CLIENT_ID + ":" + CLIENT_SECRET).getBytes(), Base64.NO_WRAP);
+        return header;
     }
     
     /**
@@ -211,14 +209,13 @@ public class VolleyHttpClient {
      * @exception throws [违例类型] [违例说明]
      * @see [类、类#方法、类#成员]
      */
-    public String getCacheData(String url){
-
+    public String getCacheData(String url) {
+        
         if (HttpService.httpQueue.getCache().get(getAbsoluteUrl(url)) != null) {
-            String cacheStr = new String(HttpService.httpQueue.getCache()
-                    .get(getAbsoluteUrl(url)).data);
+            String cacheStr = new String(HttpService.httpQueue.getCache().get(getAbsoluteUrl(url)).data);
             return cacheStr;
         }
         return "";
     }
-
+    
 }
