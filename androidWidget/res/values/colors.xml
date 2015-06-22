@@ -33,5 +33,7 @@
     <color name="holo_green_light">#ff99cc00</color>
     <color name="holo_orange_light">#ffffbb33</color>
     <color name="holo_red_light">#ffff4444</color>
-
+   <color name="shadow_end_color">#03000000</color>
+    <color name="shadow_start_color">#37000000</color>
+      <color name="bg_glass">#88ffffff</color>
 </resources>

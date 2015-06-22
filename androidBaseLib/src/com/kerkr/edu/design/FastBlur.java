@@ -13,6 +13,8 @@ import android.support.v8.renderscript.ScriptIntrinsicBlur;
  */
 public class FastBlur {
     
+	
+	private static final int DEFAULT_BLUR_RADIUS = 10;
     public static Bitmap doBlurRenderScript(Context context,Bitmap sentBitmap,int radius, boolean canReuseInBitmap){
        
         Bitmap bitmap;

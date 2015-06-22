@@ -19,7 +19,7 @@
         <attr name="android:textColorLink" />
     </declare-styleable>
     <declare-styleable name="typespace">
-        <attr name="typefaceName" format="reference|string"  />
+        <attr name="typefaceName" format="reference|string" />
     </declare-styleable>
     <declare-styleable name="EditText">
 
@@ -175,7 +175,6 @@
         <attr name="maxLine" format="integer" />
         <attr name="text" />
     </declare-styleable>
-
     <declare-styleable name="SelectableRoundedImageView">
         <attr name="sriv_left_top_corner_radius" format="dimension" />
         <attr name="sriv_right_top_corner_radius" format="dimension" />
@@ -186,7 +185,6 @@
         <attr name="sriv_oval" format="boolean" />
         <attr name="android:scaleType" />
     </declare-styleable>
-
     <declare-styleable name="MaterialRippleLayout">
         <attr name="mrl_rippleColor" format="color" localization="suggested" />
         <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
@@ -201,7 +199,6 @@
         <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
         <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
     </declare-styleable>
-
     <declare-styleable name="AnimatedPathView">
         <attr name="strokeWidth" />
         <attr name="strokeColor" />
@@ -233,6 +230,22 @@
 
         <attr name="floatLabelHint" format="reference|string" />
     </declare-styleable>
-
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer" />
+        <attr name="animDuration" format="integer" />
+        <attr name="animAlphaStart" format="float" />
+        <attr name="expandDrawable" format="reference" />
+        <attr name="collapseDrawable" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="MaterialImageView">
+        <attr name="shadow_size" format="integer" />
+        <attr name="radius_size" format="integer" />
+        <attr name="use_white_bg" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="PxBlurringView">
+        <attr name="blurRadius" format="integer" />
+        <attr name="downsampleFactor" format="integer" />
+        <attr name="overlayColor" format="color" />
+    </declare-styleable>
 
 </resources>
