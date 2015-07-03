@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="0px"
-    android:layout_weight="1" >
+    android:layout_height="fill_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,6 +22,8 @@
         <com.kerkr.edu.editView.FloatLabelLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_marginTop="15dp"
             app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
 
@@ -41,6 +42,8 @@
         <com.kerkr.edu.editView.FloatLabelLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_marginTop="15dp"
             app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
 
@@ -54,7 +57,34 @@
                 android:singleLine="true" />
         </com.kerkr.edu.editView.FloatLabelLayout>
 
-        <TextView style="@style/ButtonFill" />
+        <TextView
+            android:id="@+id/btn_login"
+            style="@style/ButtonFill"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_selector"
+            android:text="登录"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin" >
+
+            <TextView
+                android:id="@+id/tv_forget_pass"
+                style="@style/TvActionSmall"
+                android:text="忘记密码?" />
+
+            <View style="@style/ViewTransationFillStyle" />
+
+            <TextView
+                android:id="@+id/tv_sms_login"
+                style="@style/TvActionSmall"
+                android:text="短信验证码登录" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

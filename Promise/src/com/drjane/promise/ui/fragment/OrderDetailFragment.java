@@ -15,7 +15,11 @@ import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.FragmentArg;
 import org.androidannotations.annotations.ViewById;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -23,6 +27,7 @@ import android.widget.TextView;
 import com.drjane.promise.R;
 import com.drjane.promise.model.Order;
 import com.kerkr.edu.app.BaseFragment;
+import com.kerkr.edu.app.DrawerToast;
 import com.kerkr.edu.log.VALog;
 
 /**
@@ -110,5 +115,34 @@ public class OrderDetailFragment extends BaseFragment {
         });
         
     }
-    
+    /**
+     * @param menu
+     * @param inflater
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_orderdetail, menu);
+        mActivity.showMenuIcon(menu);
+
+    }
+
+    /**
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_edit_order) {
+             Intent intent = new Intent(mActivity,BaseFragmentActivity.class);
+             BaseFragmentActivity.startActivity(mActivity, intent, CreateOrderFragment_.class.getName());
+            return true;
+        }else if(id == R.id.action_delete_order){
+            DrawerToast.getInstance().show("删除");
+            
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

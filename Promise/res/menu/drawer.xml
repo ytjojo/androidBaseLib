@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/schedule_manage"
+            android:icon="@drawable/ic_action_wallet_travel"
+            android:title="日程管理"
+            />
+        <item
+            android:id="@+id/package_manage"
+            android:icon="@drawable/ic_action_redeem"
+            android:title="套餐管理"
+            />
+        <item
+            android:id="@+id/customer_manager"
+            android:icon="@drawable/ic_action_account_child"
+            android:title="客户档案"
+            />
+
+    </group>
+</menu>

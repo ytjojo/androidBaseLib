@@ -62,7 +62,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.drjane.promise.ui.activity.MainCalendarActivity"
+            android:name="com.drjane.promise.ui.fragment.LaunchActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,12 +71,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.drjane.promise.ui.activity.SettingActivity"
+            android:name="com.drjane.promise.ui.fragment.SettingActivity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.drjane.promise.ui.activity.MainCalendarActivity" />
         </activity>
+        <activity 
+            android:name="com.drjane.promise.ui.fragment.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity 
+            android:name="com.drjane.promise.ui.fragment.MainCalendarActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+           />
+        <activity 
+            android:name="com.drjane.promise.ui.fragment.BaseFragmentActivity"
+            android:screenOrientation="portrait"
+           />
+        <activity 
+            android:name="com.drjane.promise.ui.fragment.OrderDetailActivity"
+            android:screenOrientation="portrait"
+           />
+        <activity 
+            android:name="com.drjane.promise.ui.fragment.DrawerActivity_"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+           />
     </application>
 
 </manifest>

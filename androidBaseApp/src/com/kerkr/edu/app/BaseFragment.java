@@ -6,6 +6,7 @@ import java.util.List;
 import com.kerkr.edu.app.BaseActivity;
 import com.kerkr.edu.app.Constans;
 import com.kerkr.edu.eventbus.DefaultEvent;
+import com.kerkr.edu.http.HttpConfig;
 import com.kerkr.edu.log.VALog;
 import com.kerkr.edu.utill.CollectionUtils;
 import com.kerkr.edu.utill.NetChecker;
@@ -96,6 +97,11 @@ public abstract class BaseFragment extends Fragment {
             return mActivity.getApplicationContext();
         }
         return null;
+    }
+    
+
+    public boolean hasCustomToolbar(){
+        return false;
     }
     
     @Override
@@ -225,7 +231,7 @@ public abstract class BaseFragment extends Fragment {
     }
     
     public void umengEvent(String eventId, String label) {
-        if (Constans.DEBUG_MODE || mActivity == null) {
+        if (HttpConfig.DEBUG || mActivity == null) {
             return;
         }
         MobclickAgent.onEvent(getApplicationContext(), eventId, label);

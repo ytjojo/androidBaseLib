@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.util.Log;
 
+import com.kerkr.edu.http.HttpConfig;
 import com.kerkr.edu.log.VALog;
 import com.kerkr.edu.reflect.BeanUtil;
 
@@ -165,7 +166,7 @@ public class ArrayUtils {
             datas.add(array[i]);
         }
         
-        if (Constans.DEBUG_MODE)
+        if (HttpConfig.DEBUG)
             for (int i = 0; i < datas.size(); i++) {
                 VALog.i("DATA:" + datas.get(i));
             }

@@ -36,7 +36,7 @@ public class MultipartRequest extends Request<String> {
 
 	public MultipartRequest(int method, MultipartRequestParams params,
 			String url,Listener<String> l) {
-		super(method, Constans.SERVICE_URL + url, null);
+		super(method, HttpConfig.getUrl()+ url, null);
 		// TODO Auto-generated constructor stub
 		this.params = params;
 		this.mListener=l;

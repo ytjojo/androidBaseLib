@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="NewApi">
+        <ignore path="src/com/drjane/promise/ui/activity/DrawerActivity.java" />
         <ignore path="src/com/drjane/promise/ui/fragment/ActivityDatePickerFragment.java" />
         <ignore path="src/com/drjane/promise/ui/fragment/DatePickerFragment.java" />
+        <ignore path="src/com/drjane/promise/ui/fragment/DrawerActivity.java" />
     </issue>
 </lint>

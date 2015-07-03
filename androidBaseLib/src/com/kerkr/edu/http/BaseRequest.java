@@ -36,5 +36,7 @@ public class BaseRequest implements Serializable{
     public String clientBuild;//20140604 wangc 客户端当前版本号
     
     public int appType;
+    
+    public String relativeUrl;
    
 }

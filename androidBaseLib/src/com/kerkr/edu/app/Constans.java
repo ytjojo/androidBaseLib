@@ -4,9 +4,8 @@ public class Constans
 {
 
 	
-	public final static boolean DEBUG_MODE = true;
 	
-	public final static String SERVICE_URL = "";
+
 	
     public static final int DEFAULT_CITY_ID = 87;
 	

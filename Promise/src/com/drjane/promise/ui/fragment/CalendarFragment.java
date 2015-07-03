@@ -27,6 +27,7 @@ import com.drjane.promise.ui.widget.CustomGridView;
 import com.kerkr.edu.app.BaseActivity;
 import com.kerkr.edu.app.BaseFragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -79,7 +80,45 @@ public class CalendarFragment extends Fragment {
             @Override
             public void run() {
                 calendarGridViewAdapter = new CalendarAdapter(getActivity(), mCalendar);
-                
+                calendarGridViewAdapter.setListener(new OnItemClickListener() {
+                    
+                    @Override
+                    public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                        // TODO Auto-generated method stub
+                        //                        // 点击任何一个item，得到这个item的日期(排除点击的是周日到周六(点击不响应))
+                        //                        int startPosition = calendarGridViewAdapter.getStartPositon();
+                        //                        int endPosition = calendarGridViewAdapter.getEndPosition();
+                        //                        if (startPosition <= position + 7 && position <= endPosition - 7) {
+                        //                            String scheduleDay = calendarGridViewAdapter.getDateByClickItem(position).split("\\.")[0]; // 这一天的阳历
+                        //                            // String scheduleLunarDay =
+                        //                            // calV.getDateByClickItem(position).split("\\.")[1];
+                        //                            // //这一天的阴历
+                        //                            String scheduleYear = calendarGridViewAdapter.getShowYear();
+                        //                            String scheduleMonth = calendarGridViewAdapter.getShowMonth();
+                        //                            Log.i("TAG", "   position " + position + "year" + scheduleYear + scheduleDay);
+                        //                            // Toast.makeText(CalendarActivity.this, "点击了该条目",
+                        //                            // Toast.LENGTH_SHORT).show();
+                        //                            BaseActivity activity= (BaseActivity)getActivity();
+                        //                            activity.startFragment(new DayOrderListFragment());
+                        //                        }
+                        
+                        String scheduleDay = calendarGridViewAdapter.getDateByClickItem(position).split("\\.")[0]; // 这一天的阳历
+                        String scheduleYear = calendarGridViewAdapter.getShowYear();
+                        String scheduleMonth = calendarGridViewAdapter.getShowMonth();
+                        Log.i("TAG", "   position " + position + "year" + scheduleYear + scheduleDay);
+                        final BaseActivity activity = (BaseActivity) getActivity();
+                        mHandler.postDelayed(new Runnable() {
+                            
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                Intent intent = new Intent(activity,BaseFragmentActivity.class);
+                                BaseFragmentActivity.startActivity(activity, intent, DayOrderListFragment.class.getName());
+                                
+                            }
+                        }, 200);
+                    }
+                });
             }
         });
     }
@@ -106,29 +145,6 @@ public class CalendarFragment extends Fragment {
         mGridView.setVerticalSpacing(1);
         mGridView.setHorizontalSpacing(1);
         
-        mGridView.setOnItemClickListener(new OnItemClickListener() {
-            
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                // TODO Auto-generated method stub
-                // 点击任何一个item，得到这个item的日期(排除点击的是周日到周六(点击不响应))
-                int startPosition = calendarGridViewAdapter.getStartPositon();
-                int endPosition = calendarGridViewAdapter.getEndPosition();
-                if (startPosition <= position + 7 && position <= endPosition - 7) {
-                    String scheduleDay = calendarGridViewAdapter.getDateByClickItem(position).split("\\.")[0]; // 这一天的阳历
-                    // String scheduleLunarDay =
-                    // calV.getDateByClickItem(position).split("\\.")[1];
-                    // //这一天的阴历
-                    String scheduleYear = calendarGridViewAdapter.getShowYear();
-                    String scheduleMonth = calendarGridViewAdapter.getShowMonth();
-                    Log.i("TAG", "   position " + position + "year" + scheduleYear + scheduleDay);
-                    // Toast.makeText(CalendarActivity.this, "点击了该条目",
-                    // Toast.LENGTH_SHORT).show();
-                    BaseActivity activity= (BaseActivity)getActivity();
-                    activity.startFragment(new DayOrderListFragment());
-                }
-            }
-        });
         mHandler.post(new Runnable() {
             
             @Override

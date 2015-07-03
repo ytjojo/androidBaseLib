@@ -10,7 +10,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.Volley;
 import com.kerkr.edu.app.BaseApplication;
-import com.kerkr.edu.volley.MultiPartStack;
 
 public class HttpService {
     public static String TAG = HttpService.class.getName();
@@ -24,7 +23,7 @@ public class HttpService {
     private static HttpService httpService;
     
     private HttpService(Context context) {
-        httpQueue = Volley.newRequestQueue(context);
+        httpQueue = Volley.newRequestQueue(context.getApplicationContext());
     }
     
     public static HttpService getHttpService() {
@@ -63,17 +62,17 @@ public class HttpService {
     }
    
     
-    public <T> void addToMultiPartRequestQueue(Request<T> request ,String tag){
-        request.setTag(TextUtils.isEmpty(tag) ? UPLOAD_TAG : tag);
-        if(uploadFillQueue ==null){
-           uploadFillQueue = Volley.newRequestQueue(BaseApplication.getInstance(), new MultiPartStack());
-        }
-        uploadFillQueue.add(request);
-    }
+//    public <T> void addToMultiPartRequestQueue(Request<T> request ,String tag){
+//        request.setTag(TextUtils.isEmpty(tag) ? UPLOAD_TAG : tag);
+//        if(uploadFillQueue ==null){
+//           uploadFillQueue = Volley.newRequestQueue(BaseApplication.getInstance(), new MultiPartStack());
+//        }
+//        uploadFillQueue.add(request);
+//    }
     
-    public <T> void addToMultiPartRequestQueue(Request<T> request ){
-        addToMultiPartRequestQueue( request ,null);
-    }
+//    public <T> void addToMultiPartRequestQueue(Request<T> request ){
+//        addToMultiPartRequestQueue( request ,null);
+//    }
     
     /**
      * 取消指定tag的请求

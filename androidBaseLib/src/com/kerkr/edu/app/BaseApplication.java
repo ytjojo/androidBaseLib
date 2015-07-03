@@ -13,6 +13,7 @@ package com.kerkr.edu.app;
 import java.lang.reflect.Field;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.kerkr.edu.http.HttpConfig;
 import com.kerkr.edu.http.HttpService;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -34,11 +35,11 @@ import android.view.ViewConfiguration;
  * @see  [相关类/方法]
  * @since  [产品/模块版本]
  */
-public class BaseApplication extends Application{
+public abstract class BaseApplication extends Application {
     
     public static String mAppName;
     
-//    public static int mNetWorkState = NetChecker.NETWORN_NONE;
+    //    public static int mNetWorkState = NetChecker.NETWORN_NONE;
     
     //此路径只保存新版本APK文件，下载新版本时会被清空
     //    public final static String mDownloadPath = VAConst.DOWNLOAD_CACHE;
@@ -50,14 +51,15 @@ public class BaseApplication extends Application{
     
     private static BaseApplication mInstance = null;
     
-    public static boolean isActive ;
+    public static boolean isActive;
+    
     
     /**
      * 
      */
     @Override
     public void onCreate() {
-        mInstance =this;
+        mInstance = this;
         SDKInitializer.initialize(this);
         super.onCreate();
         // 崩溃反馈
@@ -65,21 +67,27 @@ public class BaseApplication extends Application{
         HttpService.getHttpService();
         initLocalVersion();
         showMenuView();
-        
+     
     }
     
-    public void showMenuView(){
+
+    
+    public abstract void initHttpConfig();
+    
+    public void showMenuView() {
         try {
-            ViewConfiguration config = ViewConfiguration.get(this);         
+            ViewConfiguration config = ViewConfiguration.get(this);
             Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
-            if(menuKeyField != null) {
+            if (menuKeyField != null) {
                 menuKeyField.setAccessible(true);
                 menuKeyField.setBoolean(config, false);
             }
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             // Ignore
         }
     }
+    
     public void initImageLoader() {
         // This configuration tuning is custom. You can tune every option, you
         // may tune some of them,
@@ -99,9 +107,11 @@ public class BaseApplication extends Application{
                 .build();
         ImageLoader.getInstance().init(config);
     }
+    
     public static BaseApplication getInstance() {
         return mInstance;
     }
+    
     public void initLocalVersion() {
         PackageInfo pinfo;
         try {
@@ -119,9 +129,9 @@ public class BaseApplication extends Application{
      */
     public void handleRestart() {
         ActivityTack.getInstance().AppExit(true);
-//        Intent intent = new Intent(this, LaunchActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent);
+        //        Intent intent = new Intent(this, LaunchActivity.class);
+        //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //        startActivity(intent);
         System.exit(10);
     }
 }

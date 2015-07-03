@@ -7,12 +7,15 @@ import java.util.Date;
 import com.drjane.promise.R;
 import com.drjane.promise.calendar.LunarCalendar;
 import com.drjane.promise.calendar.SpecialCalendar;
+import com.kerkr.edu.app.CompatUtil;
+import com.kerkr.edu.material.RippleRelativeLayout;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.view.ViewCompat;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
@@ -21,6 +24,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -87,9 +92,11 @@ public class CalendarAdapter extends BaseAdapter {
     
     private int todayColor;
     
-    private int weekendColor;
+    private int weekendColor = Color.rgb(23, 126, 214);
     
-    private int todayBackColor;
+    private int todayBackColor = Color.rgb(23, 126, 214);
+    
+    private OnItemClickListener mListener;
     
     public CalendarAdapter() {
         Date date = new Date();
@@ -98,6 +105,10 @@ public class CalendarAdapter extends BaseAdapter {
         sys_month = sysDate.split("-")[1];
         sys_day = sysDate.split("-")[2];
         
+    }
+    
+    public void setListener(OnItemClickListener l) {
+        this.mListener = l;
     }
     
     public CalendarAdapter(Context context, Resources rs, int jumpMonth, int jumpYear, int year_c, int month_c, int day_c) {
@@ -180,6 +191,10 @@ public class CalendarAdapter extends BaseAdapter {
         return position;
     }
     
+    public  boolean  isValid(int position) {
+        return position < daysOfMonth + dayOfWeek && position >= dayOfWeek;
+    }
+    
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         
@@ -196,29 +211,28 @@ public class CalendarAdapter extends BaseAdapter {
         if (dv != null || dv != "") {
             sp.setSpan(new RelativeSizeSpan(0.75f), d.length() + 1, dayNumber[position].length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
-        // sp.setSpan(new ForegroundColorSpan(Color.MAGENTA), 14, 16,
-        // Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        textView.setText(sp);
-        textView.setTextColor(Color.GRAY);
-        
+        RippleRelativeLayout rippleView = (RippleRelativeLayout)convertView;
         if (position < daysOfMonth + dayOfWeek && position >= dayOfWeek) {
+            textView.setText(sp);
             // 当前月信息显示
             textView.setTextColor(Color.BLACK);// 当月字体设黑
-            //			drawable = res.getDrawable(R.drawable.calendar_item_selected_bg);
-            drawable = new ColorDrawable(Color.rgb(23, 126, 214));
             if (position % 7 == 0 || position % 7 == 6) {
                 // 当前月信息显示
-                textView.setTextColor(Color.rgb(23, 126, 214));// 当月字体设黑
-                //				drawable = res.getDrawable(R.drawable.calendar_item_selected_bg);
-                drawable = new ColorDrawable(Color.rgb(23, 126, 214));
+                textView.setTextColor(weekendColor);// 周末颜色
             }
+            rippleView.setRippleAlpha(90);
         }
-        
+        else {
+            rippleView.setRippleAlpha(0);
+            textView.setText("");
+        }
+        convertView.setOnClickListener(new ItemClick(position, (AdapterView)parent));
         if (currentFlag == position) {
+            textView.setText(sp);
             // 设置当天的背景
             //			drawable = res.getDrawable(R.drawable.calendar_item_selected_bg);
-            drawable = new ColorDrawable(Color.rgb(23, 126, 214));
-            textView.setBackgroundDrawable(drawable);
+            drawable = new ColorDrawable(todayBackColor);
+            CompatUtil.setBackground(textView, drawable);
             textView.setTextColor(Color.WHITE);
         }
         return convertView;
@@ -283,6 +297,22 @@ public class CalendarAdapter extends BaseAdapter {
         
     }
     
+    
+    public  class ItemClick implements View.OnClickListener{
+        private int mPosition;
+        private AdapterView mAdapterView;
+        public ItemClick(int p ,AdapterView group){
+            mPosition = p;
+            this.mAdapterView = group;
+        }
+        @Override
+        public void onClick(View v) {
+           if(isValid(mPosition)&& mListener != null){
+               mListener.onItemClick(mAdapterView, v, mPosition, mPosition);
+           }
+            
+        }
+    }
     public void matchScheduleDate(int year, int month, int day) {
         
     }

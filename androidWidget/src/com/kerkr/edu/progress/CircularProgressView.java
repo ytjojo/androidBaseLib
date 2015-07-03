@@ -4,7 +4,7 @@
 
 package com.kerkr.edu.progress;
 
-import com.kerkr.edu.widget.drawable.CircularProgressDrawable;
+import com.kerkr.edu.drawable.CircularProgressDrawable;
 
 import android.content.Context;
 import android.graphics.Canvas;

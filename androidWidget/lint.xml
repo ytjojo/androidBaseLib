@@ -4,6 +4,8 @@
         <ignore path="src/com/kerkr/edu/blur/BlurDialogEngine.java" />
         <ignore path="src/com/kerkr/edu/blur/ViewBlurrer.java" />
         <ignore path="src/com/kerkr/edu/editView/FloatLabelLayout.java" />
+        <ignore path="src/com/kerkr/edu/material/RippleBackground.java" />
+        <ignore path="src/com/kerkr/edu/recycleView/BaseRecyclerViewAdapter.java" />
         <ignore path="src/com/kerkr/edu/widget/CircleButton.java" />
     </issue>
 </lint>

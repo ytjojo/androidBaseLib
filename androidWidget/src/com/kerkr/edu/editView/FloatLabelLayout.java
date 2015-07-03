@@ -129,6 +129,14 @@ public class FloatLabelLayout extends LinearLayout {
         // Update the label visibility with no animation
         updateLabelVisibility(false);
 
+        mEditText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                // TODO Auto-generated method stub
+                
+            }
+        });
         // Add a TextWatcher so that we know when the text input has changed
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override

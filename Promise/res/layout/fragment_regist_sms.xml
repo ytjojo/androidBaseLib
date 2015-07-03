@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.kerkr.edu.editView.FloatLabelLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="15dp"
+        app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机号码"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/edit_password"
+            android:singleLine="true" />
+    </com.kerkr.edu.editView.FloatLabelLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
+
+        <com.kerkr.edu.editView.FloatLabelLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+            <EditText
+                android:id="@+id/edit_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="短信验证码"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/edit_password"
+                android:singleLine="true" />
+        </com.kerkr.edu.editView.FloatLabelLayout>
+
+        <TextView
+            android:id="@+id/btn_sendSms"
+            style="@style/ButtonBase"
+            android:layout_width="80dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:text="获取验证码" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_Regist_finish"
+        style="@style/ButtonFill"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_selector"
+        android:text="完成注册"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
+
+        <View style="@style/ViewTransationFillStyle" />
+
+        <TextView
+            style="@style/TvActionSmall"
+            android:text="注册代表同意"
+            android:textColor="@color/textColorPrimary_black_secondary" />
+
+        <TextView
+            android:id="@+id/tv_user_protocol"
+            style="@style/TvActionSmall"
+            android:text="《用户协议》" />
+
+        <View style="@style/ViewTransationFillStyle" />
+    </LinearLayout>
+
+</LinearLayout>

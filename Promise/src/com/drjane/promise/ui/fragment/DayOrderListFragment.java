@@ -23,6 +23,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -140,6 +142,15 @@ public class DayOrderListFragment extends BaseFragment {
                 nameTv.setText(order.customerName);
                 status.setText("已付款");
                 return convertView1;
+            }
+        });
+        listView.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                BaseFragment fragment = OrderDetailFragment_.builder().arg("order", mOrders.get(position)).build();
+                startFragment(fragment);
+                
             }
         });
     }

@@ -20,6 +20,7 @@ import com.kerkr.edu.app.BaseFragment;
 import com.kerkr.edu.app.DrawerToast;
 import com.kerkr.edu.log.VALog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -195,7 +196,8 @@ public class ViewpagerFragment extends BaseFragment implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == R.id.action_create_order) {
-			startFragment(new CreateOrderFragment_());
+			 Intent intent = new Intent(mActivity,BaseFragmentActivity.class);
+             BaseFragmentActivity.startActivity(mActivity, intent, CreateOrderFragment_.class.getName());
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -302,17 +304,17 @@ public class ViewpagerFragment extends BaseFragment implements
 	@Override
 	public void setNavigations() {
 		setTitle("Promise");
-		setNavigation(R.drawable.ic_action_image_timer_auto,
-				new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						DrawerToast.getInstance(getApplicationContext()).show(
-								"列表");
-						startFragment(new OrderListFragment_());
-
-					}
-				});
+//		setNavigation(R.drawable.ic_action_image_timer_auto,
+//				new View.OnClickListener() {
+//
+//					@Override
+//					public void onClick(View v) {
+//						DrawerToast.getInstance(getApplicationContext()).show(
+//								"列表");
+//						startFragment(new OrderListFragment_());
+//
+//					}
+//				});
 
 	}
 }

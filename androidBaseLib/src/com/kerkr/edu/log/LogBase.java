@@ -6,6 +6,7 @@ import java.util.Hashtable;
 
 import com.kerkr.edu.app.BaseApplication;
 import com.kerkr.edu.app.Constans;
+import com.kerkr.edu.http.HttpConfig;
 
 /**
  * The class for print log
@@ -102,7 +103,7 @@ public class LogBase
      */
     public void i(Object str)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -119,7 +120,7 @@ public class LogBase
      */
     public void d(Object str)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -135,7 +136,7 @@ public class LogBase
      */
     public void v(Object str)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -151,7 +152,7 @@ public class LogBase
      */
     public void w(Object str)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -167,7 +168,7 @@ public class LogBase
      */
     public void e(Object str)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -183,7 +184,7 @@ public class LogBase
      */
     public void e(Exception ex)
     {
-        if (!Constans.DEBUG_MODE)
+        if (!HttpConfig.DEBUG)
         {
             return;
         }
@@ -201,7 +202,7 @@ public class LogBase
     public void e(String log, Throwable tr)
     {
         
-        if (!Constans.DEBUG_MODE) {
+        if (!HttpConfig.DEBUG) {
             return ;
         }
         StackTraceElement caller = Thread.currentThread().getStackTrace()[4];

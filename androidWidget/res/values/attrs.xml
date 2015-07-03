@@ -166,9 +166,6 @@
     <declare-styleable name="DrawInsetsFramelayout">
         <attr name="insetBackground" format="reference" />
     </declare-styleable>
-    <declare-styleable name="ScrimInsetsView">
-        <attr name="insetForeground" format="reference" />
-    </declare-styleable>
     <declare-styleable name="MoreTextStyle">
         <attr name="textSize" />
         <attr name="textColor" />
@@ -246,6 +243,23 @@
         <attr name="blurRadius" format="integer" />
         <attr name="downsampleFactor" format="integer" />
         <attr name="overlayColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RippleViewButton">
+        <attr name="button_rippleColor" format="color" />
+        <attr name="alphaFactor" format="float" />
+        <attr name="hover" format="boolean" />
     </declare-styleable>
 
 </resources>

@@ -18,9 +18,11 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -56,7 +58,7 @@ import com.kerkr.edu.utill.CollectionUtils;
 @EFragment
 public class OrderListFragment extends BaseFragment {
     
-    @ViewById(R.id.listView)
+    @ViewById(R.id.listview)
     XExpandListView mListView;
     
     AppBaseExpandAdapter<String, Order> mAdapter;
@@ -79,6 +81,7 @@ public class OrderListFragment extends BaseFragment {
     @AfterViews
     public void initView() {
     	VALog.i("createView");
+    	 createDate();
         mListView.setPullLoadEnable(true);
         mListView.setPullRefreshEnable(true);
         mListView.setOnChildClickListener(new OnChildClickListener() {
@@ -86,9 +89,11 @@ public class OrderListFragment extends BaseFragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 
-                DrawerToast.getInstance().show("click");
-                BaseFragment fragment = OrderDetailFragment_.builder().arg("order", mChildLists.get(groupPosition).get(childPosition)).build();
-                startFragment(fragment);
+            
+                Intent intent = new Intent(mActivity,OrderDetailActivity.class);
+                intent.putExtra(OrderDetailFragment_.M_ORDER_ARG, mChildLists.get(groupPosition).get(childPosition));
+                startActivity(intent);
+                
                 return false;
             }
         });
@@ -146,7 +151,7 @@ public class OrderListFragment extends BaseFragment {
     @Override
     public void onUserVisble() {
         VALog.e("visiable ___________________________-");
-        createDate();
+       
         
     }
     
@@ -248,7 +253,14 @@ public class OrderListFragment extends BaseFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // TODO Auto-generated method stub
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_empty, menu);
+       
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mActivity.mDrawerToggle!=null &&mActivity.mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+          }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     public void onHiddenChanged(boolean hidden) {
@@ -261,13 +273,14 @@ public class OrderListFragment extends BaseFragment {
      */
     @Override
     public void setNavigations() {
-        setNavigation(R.drawable.ic_action_hardware_keyboard_backspace, new OnClickListener() {
-            
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                popBackFragment();
-            }
-        });
+//        setNavigation(R.drawable.ic_action_hardware_keyboard_backspace, new OnClickListener() {
+//            
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                popBackFragment();
+//            }
+//        });
     }
+    
 }

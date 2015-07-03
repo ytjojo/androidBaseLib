@@ -10,12 +10,12 @@
  */
 package com.drjane.promise.app;
 
-
 import com.drjane.promise.R;
 import com.kerkr.edu.app.BaseApplication;
 import com.kerkr.edu.cache.CacheManager;
+import com.kerkr.edu.http.HttpConfig;
+import com.kerkr.edu.kit.HttpCache;
 import com.kerkr.edu.log.VALog;
-
 
 /**
  * <一句话功能简述>
@@ -38,5 +38,12 @@ public class AppContext extends BaseApplication {
         mAppName = getResources().getString(R.string.app_name);
         VALog.setTag(mAppName);
         CacheManager.getInstance().reload();
+    }
+    
+    @Override
+    public void initHttpConfig() {
+        HttpConfig.BASE_SERVICE_URL = "";
+        HttpConfig.BASE_TEST_URL = "";
+        HttpConfig.DEBUG = true;
     }
 }
