@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="libs/alipaysdk.jar"/>
 	<classpathentry kind="lib" path="libs/alipaysecsdk.jar"/>
 	<classpathentry kind="lib" path="libs/alipayutdid.jar"/>
@@ -28,7 +27,8 @@
 	<classpathentry kind="lib" path="libs/volley.jar"/>
 	<classpathentry kind="lib" path="libs/zip4j_1.3.1.jar"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="/appcompat/libs/android-support-v4.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -274,6 +274,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         ViewCompat.setTransitionName(image, EXTRA_IMAGE);
     }
     
+    
+    public void setStatusBarCorlor(int color){
+    	 if (Build.VERSION.SDK_INT >= 21) {
+             getWindow().setStatusBarColor(color);
+             getWindow().setNavigationBarColor(color);
+         }
+    }
     /**
      * 界面颜色的更改
      */

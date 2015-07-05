@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="NewApi">
+        <ignore path="src/com/kerkr/edu/anim/AnimatorBuilder.java" />
         <ignore path="src/com/kerkr/edu/blur/BlurDialogEngine.java" />
         <ignore path="src/com/kerkr/edu/blur/ViewBlurrer.java" />
         <ignore path="src/com/kerkr/edu/editView/FloatLabelLayout.java" />
