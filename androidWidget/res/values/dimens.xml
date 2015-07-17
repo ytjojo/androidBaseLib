@@ -25,5 +25,6 @@
     <dimen name="cardview_default_radius">2dp</dimen>
     <dimen name="rippleStrokeWidth">2dp</dimen>
     <dimen name="rippleRadius">64dp</dimen>
+    <dimen name="spacing_medium">24dp</dimen>
 
 </resources>

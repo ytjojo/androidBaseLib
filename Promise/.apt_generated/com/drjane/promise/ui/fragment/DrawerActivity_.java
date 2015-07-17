@@ -75,8 +75,8 @@ public final class DrawerActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mNavigationView = ((NavigationView) hasViews.findViewById(id.navigation_view));
         mDrawerLayout = ((DrawerLayout) hasViews.findViewById(id.drawer_layout));
+        mNavigationView = ((NavigationView) hasViews.findViewById(id.navigation_view));
     }
 
     public static class IntentBuilder_

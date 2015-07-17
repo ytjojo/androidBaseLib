@@ -65,21 +65,6 @@ public final class LoginFragment_
         mPasswordEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_password));
         mPhoneEditText = ((EditText) hasViews.findViewById(com.drjane.promise.R.id.edit_phone));
         {
-            View view = hasViews.findViewById(com.drjane.promise.R.id.btn_login);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LoginFragment_.this.loginClick();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(com.drjane.promise.R.id.tv_forget_pass);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -103,6 +88,21 @@ public final class LoginFragment_
                     @Override
                     public void onClick(View view) {
                         LoginFragment_.this.onSmsLogin();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.drjane.promise.R.id.btn_login);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LoginFragment_.this.loginClick();
                     }
 
                 }

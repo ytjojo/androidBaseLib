@@ -281,6 +281,24 @@ public abstract class BaseActivity extends AppCompatActivity {
              getWindow().setNavigationBarColor(color);
          }
     }
+    public void setTranslucentStatus(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window window = getWindow();
+            // Translucent status bar
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // Translucent navigation bar
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+    }
+    
+    public void hideNavigationBar(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+        mContentScreenView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    }
     /**
      * 界面颜色的更改
      */

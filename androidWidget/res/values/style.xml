@@ -2,7 +2,7 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseCompatTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
@@ -11,11 +11,22 @@
         <item name="actionMenuTextAppearance">@style/CustomTabTextStyle</item>
         <item name="actionMenuTextColor">@color/white</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="android:windowAnimationStyle">@null</item>
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseCompatTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppTheme.TransparentActivity">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.TransparentActivity.FullScreen">
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="CustomTabTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
@@ -69,7 +80,7 @@
         <!--
              Note that we use the base animation style here (that is no
              animations) because we really have no idea how this kind of
-             activity will be used.
+             activity will be used.
         -->
     </style>
 
@@ -86,12 +97,15 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-   <style name="TextAppearance.FloatLabel" parent="android:Widget">
+
+    <style name="TextAppearance.FloatLabel" parent="android:Widget">
         <item name="android:textColor">@color/md_blue_500</item>
         <item name="android:textSize">12sp</item>
     </style>
-     <style name="DialogSlideAnimation">
+
+    <style name="DialogSlideAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
         <item name="android:windowExitAnimation">@anim/slide_down_dialog</item>
     </style>
+
 </resources>

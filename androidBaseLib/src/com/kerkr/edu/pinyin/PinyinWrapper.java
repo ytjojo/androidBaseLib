@@ -3,11 +3,8 @@ package com.kerkr.edu.pinyin;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map.Entry;
 
-import android.app.ExpandableListActivity;
 import android.text.TextUtils;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
